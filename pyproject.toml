@@ -26,7 +26,7 @@ dependencies = [
     "brax>=0.14.2",
     "etils",
     "flax",
-    "jax",
+    "jax[cuda12]",
     "lxml",
     "mediapy",
     "ml_collections",
@@ -35,6 +35,7 @@ dependencies = [
     "warp-lang>=1.17.0",
     "orbax-checkpoint>=0.11.22",
     "tqdm",
+    "rscope>=0.0.8",
 ]
 keywords = ["mjx", "mujoco", "sim2real", "reinforcement learning"]
 

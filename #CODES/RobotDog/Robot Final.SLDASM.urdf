@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Robot Final.SLDASM">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.032825 -0.0070608 -0.010106"
+        rpy="0 0 0" />
+      <mass
+        value="0.31232" />
+      <inertia
+        ixx="0.00039411"
+        ixy="5.8067E-08"
+        ixz="2.7936E-13"
+        iyy="0.0012111"
+        iyz="-1.5089E-17"
+        izz="0.0014703" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="right_shoulder">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-17 0.0591957670180815 0.002"
+        rpy="0 0 0" />
+      <mass
+        value="0.015764489154619" />
+      <inertia
+        ixx="0.001"
+        ixy="-8.99972506457694E-22"
+        ixz="-4.46895298396339E-22"
+        iyy="0.001"
+        iyz="9.60890049509146E-22"
+        izz="0.001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="right_shoulder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="right_shoulder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_link"
+    type="continuous">
+    <origin
+      xyz="0.084485 -0.10764 0.069482"
+      rpy="0 0 -0.040958" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_shoulder" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link
+    name="right_front_leg">
+    <inertial>
+      <origin
+        xyz="-6.93889390390723E-18 -0.0315618711634187 0.00200000000000002"
+        rpy="0 0 0" />
+      <mass
+        value="0.0130112653193228" />
+      <inertia
+        ixx="0.001"
+        ixy="-6.7762635780344E-21"
+        ixz="3.55055889188672E-23"
+        iyy="0.001"
+        iyz="4.01551921385244E-21"
+        izz="0.001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="right_front_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="right_front_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_front_leg_link"
+    type="continuous">
+    <origin
+      xyz="0 0.020003 0.0065"
+      rpy="0 0 0.62485" />
+    <parent
+      link="right_shoulder" />
+    <child
+      link="right_front_leg" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link
+    name="left_shoulder">
+    <inertial>
+      <origin
+        xyz="0 0.0591957670180815 0.00199999999999999"
+        rpy="0 0 0" />
+      <mass
+        value="0.015764489154619" />
+      <inertia
+        ixx="0.001"
+        ixy="1.27054942088145E-21"
+        ixz="-1.22640940508099E-22"
+        iyy="0.001"
+        iyz="3.31357400644836E-21"
+        izz="0.001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="left_shoulder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="left_shoulder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder_link"
+    type="continuous">
+    <origin
+      xyz="0.049406 -0.099056 -0.083518"
+      rpy="-3.1416 0 2.7021" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_shoulder" />
+    <axis xyz="0 0 1" />
+    <dynamics
+      damping="1"
+      friction="1" />
+  </joint>
+  <link
+    name="left_front_leg">
+    <inertial>
+      <origin
+        xyz="1.38777878078145E-17 -0.0315618711634187 0.002"
+        rpy="0 0 0" />
+      <mass
+        value="0.0130112653193228" />
+      <inertia
+        ixx="0.001"
+        ixy="1.86347248395946E-20"
+        ixz="-2.31711275786298E-22"
+        iyy="0.001"
+        iyz="6.97374888176259E-22"
+        izz="0.001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="left_front_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="left_front_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_front_leg_link"
+    type="continuous">
+    <origin
+      xyz="0 0.020003 0.0065"
+      rpy="0 0 -1.421" />
+    <parent
+      link="left_shoulder" />
+    <child
+      link="left_front_leg" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link
+    name="right_hip">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-17 0.0591957670180815 0.00199999999999997"
+        rpy="0 0 0" />
+      <mass
+        value="0.0157644891546191" />
+      <inertia
+        ixx="0.001"
+        ixy="4.2351647362715E-22"
+        ixz="1.5506794921578E-22"
+        iyy="0.001"
+        iyz="7.62313507973136E-21"
+        izz="0.001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="right_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="right_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_link"
+    type="continuous">
+    <origin
+      xyz="-0.082726 -0.073575 0.069482"
+      rpy="0 0 0.89496" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_hip" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link
+    name="right_back_leg">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-17 -0.0315618711634187 0.00200000000000002"
+        rpy="0 0 0" />
+      <mass
+        value="0.0130112653193228" />
+      <inertia
+        ixx="0.001"
+        ixy="-1.77347523331369E-20"
+        ixz="-5.38990050648014E-22"
+        iyy="0.001"
+        iyz="6.50994509257105E-21"
+        izz="0.001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="right_back_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="right_back_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_back_leg_link"
+    type="continuous">
+    <origin
+      xyz="0 0.020003 0.0065"
+      rpy="0 0 -1.0068" />
+    <parent
+      link="right_hip" />
+    <child
+      link="right_back_leg" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link
+    name="left_hip">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.001" />
+      <inertia
+        ixx="0.001"
+        ixy="0"
+        ixz="0"
+        iyy="0.001"
+        iyz="0"
+        izz="0.001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="left_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="left_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_link"
+    type="continuous">
+    <origin
+      xyz="-0.080372 -0.070493 -0.083518"
+      rpy="-3.1416 0 -2.2041" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_hip" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link
+    name="left_back_leg">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-17 -0.0315618711634187 0.002"
+        rpy="0 0 0" />
+      <mass
+        value="0.0130112653193228" />
+      <inertia
+        ixx="0.001"
+        ixy="-1.84759061619844E-20"
+        ixz="-1.02813689567105E-21"
+        iyy="0.001"
+        iyz="-3.06973170483949E-21"
+        izz="0.001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="left_back_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="left_back_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_back_leg_link"
+    type="continuous">
+    <origin
+      xyz="0 0.020003 0.0065"
+      rpy="0 0 1.3156" />
+    <parent
+      link="left_hip" />
+    <child
+      link="left_back_leg" />
+    <axis xyz="0 0 1" />
+  </joint>
+</robot>

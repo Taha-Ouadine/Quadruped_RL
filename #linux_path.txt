@@ -1,0 +1,15 @@
+cd ~/linuxrobotic/mujoco_playground
+source .venv/bin/activate
+uv run --active python3 -c (instead of python -c)
+but for python files just python filename.py suffices
+always use uv with "--active" to target the active env
+"code filename.py" to make new python file
+uv sync --all-extras (compatibility issues)
+uv pip install
+
+nvidia-smi (GPU)
+top (CPU)
+(WSL memory usage): free -h
+(clear that memory): sudo sh -c "echo 1 > /proc/sys/vm/drop_caches"
+(alternative from powershell): wsl --shutdown
+(sure to work alternative): Close and reopen vscode
