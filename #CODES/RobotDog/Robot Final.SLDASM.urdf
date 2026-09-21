@@ -8,17 +8,17 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="-0.032825 -0.0070608 -0.010106"
+        xyz="-0.0328245113452786 0.0101060043325055 -0.00706084897852209"
         rpy="0 0 0" />
       <mass
-        value="0.31232" />
+        value="0.312315740063627" />
       <inertia
-        ixx="0.00039411"
-        ixy="5.8067E-08"
-        ixz="2.7936E-13"
-        iyy="0.0012111"
-        iyz="-1.5089E-17"
-        izz="0.0014703" />
+        ixx="0.000394113006593188"
+        ixy="-2.79355824040826E-13"
+        ixz="5.80668719868496E-08"
+        iyy="0.00147032826872777"
+        iyz="1.5074366601409E-17"
+        izz="0.00121114546079005" />
     </inertial>
     <visual>
       <origin
@@ -48,16 +48,16 @@
     name="right_shoulder">
     <inertial>
       <origin
-        xyz="-2.77555756156289E-17 0.0591957670180815 0.002"
+        xyz="-2.7756E-17 0.059196 0.002"
         rpy="0 0 0" />
       <mass
-        value="0.015764489154619" />
+        value="0.015764" />
       <inertia
         ixx="0.001"
-        ixy="-8.99972506457694E-22"
-        ixz="-4.46895298396339E-22"
+        ixy="-6.8821E-22"
+        ixz="-4.4037E-22"
         iyy="0.001"
-        iyz="9.60890049509146E-22"
+        iyz="9.4909E-22"
         izz="0.001" />
     </inertial>
     <visual>
@@ -94,7 +94,8 @@
       link="base_link" />
     <child
       link="right_shoulder" />
-    <axis xyz="0 0 1" />
+    <axis
+      xyz="0 0 1" />
   </joint>
   <link
     name="right_front_leg">
@@ -106,10 +107,10 @@
         value="0.0130112653193228" />
       <inertia
         ixx="0.001"
-        ixy="-6.7762635780344E-21"
-        ixz="3.55055889188672E-23"
+        ixy="-6.29980754520386E-21"
+        ixz="4.78945840224767E-23"
         iyy="0.001"
-        iyz="4.01551921385244E-21"
+        iyz="4.02482687484075E-21"
         izz="0.001" />
     </inertial>
     <visual>
@@ -146,22 +147,23 @@
       link="right_shoulder" />
     <child
       link="right_front_leg" />
-    <axis xyz="0 0 1" />
+    <axis
+      xyz="0 0 1" />
   </joint>
   <link
     name="left_shoulder">
     <inertial>
       <origin
-        xyz="0 0.0591957670180815 0.00199999999999999"
+        xyz="1.38777878078145E-17 0.0591957670180815 0.002"
         rpy="0 0 0" />
       <mass
         value="0.015764489154619" />
       <inertia
         ixx="0.001"
-        ixy="1.27054942088145E-21"
-        ixz="-1.22640940508099E-22"
+        ixy="2.22346148654254E-21"
+        ixz="-1.42671970015156E-22"
         iyy="0.001"
-        iyz="3.31357400644836E-21"
+        iyz="3.37212432998109E-21"
         izz="0.001" />
     </inertial>
     <visual>
@@ -192,13 +194,14 @@
     name="left_shoulder_link"
     type="continuous">
     <origin
-      xyz="0.049406 -0.099056 -0.083518"
-      rpy="-3.1416 0 2.7021" />
+      xyz="0.0494064879704632 -0.099056323906075 -0.0835183568674249"
+      rpy="-3.14159265358979 0 2.7020575896327" />
     <parent
       link="base_link" />
     <child
       link="left_shoulder" />
-    <axis xyz="0 0 1" />
+    <axis
+      xyz="0 0 1" />
     <dynamics
       damping="1"
       friction="1" />
@@ -213,10 +216,10 @@
         value="0.0130112653193228" />
       <inertia
         ixx="0.001"
-        ixy="1.86347248395946E-20"
-        ixz="-2.31711275786298E-22"
+        ixy="1.82641479251709E-20"
+        ixz="-2.49790347952399E-22"
         iyy="0.001"
-        iyz="6.97374888176259E-22"
+        iyz="7.02407541911827E-22"
         izz="0.001" />
     </inertial>
     <visual>
@@ -253,7 +256,8 @@
       link="left_shoulder" />
     <child
       link="left_front_leg" />
-    <axis xyz="0 0 1" />
+    <axis
+      xyz="0 0 1" />
   </joint>
   <link
     name="right_hip">
@@ -265,10 +269,10 @@
         value="0.0157644891546191" />
       <inertia
         ixx="0.001"
-        ixy="4.2351647362715E-22"
-        ixz="1.5506794921578E-22"
+        ixy="-2.11758236813575E-22"
+        ixz="1.3987687073611E-22"
         iyy="0.001"
-        iyz="7.62313507973136E-21"
+        iyz="7.65221226444623E-21"
         izz="0.001" />
     </inertial>
     <visual>
@@ -305,7 +309,8 @@
       link="base_link" />
     <child
       link="right_hip" />
-    <axis xyz="0 0 1" />
+    <axis
+      xyz="0 0 1" />
   </joint>
   <link
     name="right_back_leg">
@@ -317,10 +322,10 @@
         value="0.0130112653193228" />
       <inertia
         ixx="0.001"
-        ixy="-1.77347523331369E-20"
-        ixz="-5.38990050648014E-22"
+        ixy="-1.77744570025395E-20"
+        ixz="-5.15127633186241E-22"
         iyy="0.001"
-        iyz="6.50994509257105E-21"
+        iyz="6.51468469139311E-21"
         izz="0.001" />
     </inertial>
     <visual>
@@ -357,7 +362,8 @@
       link="right_hip" />
     <child
       link="right_back_leg" />
-    <axis xyz="0 0 1" />
+    <axis
+      xyz="0 0 1" />
   </joint>
   <link
     name="left_hip">
@@ -409,22 +415,23 @@
       link="base_link" />
     <child
       link="left_hip" />
-    <axis xyz="0 0 1" />
+    <axis
+      xyz="0 0 1" />
   </joint>
   <link
     name="left_back_leg">
     <inertial>
       <origin
-        xyz="-1.38777878078145E-17 -0.0315618711634187 0.002"
+        xyz="-1.38777878078145E-17 -0.0315618711634187 0.00200000000000002"
         rpy="0 0 0" />
       <mass
-        value="0.0130112653193228" />
+        value="0.0130112653193227" />
       <inertia
         ixx="0.001"
-        ixy="-1.84759061619844E-20"
-        ixz="-1.02813689567105E-21"
+        ixy="-2.05934885301202E-20"
+        ixz="-1.01430650681023E-21"
         iyy="0.001"
-        iyz="-3.06973170483949E-21"
+        iyz="-3.06495495859124E-21"
         izz="0.001" />
     </inertial>
     <visual>
@@ -461,6 +468,7 @@
       link="left_hip" />
     <child
       link="left_back_leg" />
-    <axis xyz="0 0 1" />
+    <axis
+      xyz="0 0 1" />
   </joint>
 </robot>
