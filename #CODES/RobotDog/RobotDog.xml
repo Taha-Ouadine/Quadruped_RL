@@ -2,57 +2,57 @@
   <compiler angle="radian"/>
 
   <asset>
-    <mesh name="base_link" file="base_link.STL"/>
-    <mesh name="right_shoulder" file="right_shoulder.STL"/>
-    <mesh name="right_front_leg" file="right_front_leg.STL"/>
-    <mesh name="left_shoulder" file="left_shoulder.STL"/>
-    <mesh name="left_front_leg" file="left_front_leg.STL"/>
-    <mesh name="right_hip" file="right_hip.STL"/>
-    <mesh name="right_back_leg" file="right_back_leg.STL"/>
-    <mesh name="left_hip" file="left_hip.STL"/>
-    <mesh name="left_back_leg" file="left_back_leg.STL"/>
+    <mesh name="base_link" content_type="model/stl" file="base_link.STL"/>
+    <mesh name="right_shoulder" content_type="model/stl" file="right_shoulder.STL"/>
+    <mesh name="right_front_leg" content_type="model/stl" file="right_front_leg.STL"/>
+    <mesh name="left_shoulder" content_type="model/stl" file="left_shoulder.STL"/>
+    <mesh name="left_front_leg" content_type="model/stl" file="left_front_leg.STL"/>
+    <mesh name="right_hip" content_type="model/stl" file="right_hip.STL"/>
+    <mesh name="right_back_leg" content_type="model/stl" file="right_back_leg.STL"/>
+    <mesh name="left_hip" content_type="model/stl" file="left_hip.STL"/>
+    <mesh name="left_back_leg" content_type="model/stl" file="left_back_leg.STL"/>
   </asset>
 
   <worldbody>
-    <geom type="mesh" rgba="1 1 1 1" mesh="base_link"/>
+    <geom type="mesh" rgba="1 1 1 0.35" mesh="base_link"/>
     <body name="right_shoulder" pos="0.084485 -0.10764 0.069482" quat="0.99979 0 0 -0.0204776">
-      <inertial pos="0 0.059196 0.002" mass="0.015764" diaginertia="0.001 0.001 0.001"/>
+      <inertial pos="0 0.059196 0.002" mass="0.016868" diaginertia="0.001 0.001 0.001"/>
       <joint name="right_shoulder_link" pos="0 0 0" axis="0 0 1"/>
-      <geom type="mesh" rgba="1 1 1 1" mesh="right_shoulder"/>
-      <body name="right_front_leg" pos="0 0.020003 0.0065" quat="0.951591 0 0 0.307367">
-        <inertial pos="0 -0.0315619 0.002" mass="0.0130113" diaginertia="0.001 0.001 0.001"/>
+      <geom type="mesh" rgba="1 1 1 0.35" mesh="right_shoulder"/>
+      <body name="right_front_leg" pos="0 0.020003 0.0065" quat="0.951592 0 0 0.307365">
+        <inertial pos="0 -0.031562 0.002" mass="0.013922" diaginertia="0.001 0.001 0.001"/>
         <joint name="right_front_leg_link" pos="0 0 0" axis="0 0 1"/>
-        <geom type="mesh" rgba="1 1 1 1" mesh="right_front_leg"/>
+        <geom type="mesh" rgba="1 1 1 0.35" mesh="right_front_leg"/>
       </body>
     </body>
     <body name="left_shoulder" pos="0.0494065 -0.0990563 -0.0835184" quat="0 -0.218003 -0.975948 0">
-      <inertial pos="0 0.0591958 0.002" mass="0.0157645" diaginertia="0.001 0.001 0.001"/>
+      <inertial pos="0 0.059196 0.002" mass="0.016868" diaginertia="0.001 0.001 0.001"/>
       <joint name="left_shoulder_link" pos="0 0 0" axis="0 0 1" damping="1" frictionloss="1"/>
-      <geom type="mesh" rgba="1 1 1 1" mesh="left_shoulder"/>
-      <body name="left_front_leg" pos="0 0.020003 0.0065" quat="0.758036 0 0 -0.652213">
-        <inertial pos="0 -0.0315619 0.002" mass="0.0130113" diaginertia="0.001 0.001 0.001"/>
+      <geom type="mesh" rgba="1 1 1 0.35" mesh="left_shoulder"/>
+      <body name="left_front_leg" pos="0 0.020003 0.0065" quat="0.758029 0 0 -0.652221">
+        <inertial pos="0 -0.031562 0.002" mass="0.013922" diaginertia="0.001 0.001 0.001"/>
         <joint name="left_front_leg_link" pos="0 0 0" axis="0 0 1"/>
-        <geom type="mesh" rgba="1 1 1 1" mesh="left_front_leg"/>
+        <geom type="mesh" rgba="1 1 1 0.35" mesh="left_front_leg"/>
       </body>
     </body>
-    <body name="right_hip" pos="-0.082726 -0.073575 0.069482" quat="0.90154 0 0 0.432695">
-      <inertial pos="0 0.0591958 0.002" mass="0.0157645" diaginertia="0.001 0.001 0.001"/>
+    <body name="right_hip" pos="-0.0827258 -0.0735749 0.0694816" quat="0.90154 0 0 0.432696">
+      <inertial pos="0 0.059196 0.002" mass="0.016868" diaginertia="0.001 0.001 0.001"/>
       <joint name="right_hip_link" pos="0 0 0" axis="0 0 1"/>
-      <geom type="mesh" rgba="1 1 1 1" mesh="right_hip"/>
-      <body name="right_back_leg" pos="0 0.020003 0.0065" quat="0.875947 0 0 -0.482407">
-        <inertial pos="0 -0.0315619 0.002" mass="0.0130113" diaginertia="0.001 0.001 0.001"/>
+      <geom type="mesh" rgba="1 1 1 0.35" mesh="right_hip"/>
+      <body name="right_back_leg" pos="0 0.020003 0.0065" quat="0.875956 0 0 -0.482391">
+        <inertial pos="0 -0.031562 0.002" mass="0.013922" diaginertia="0.001 0.001 0.001"/>
         <joint name="right_back_leg_link" pos="0 0 0" axis="0 0 1"/>
-        <geom type="mesh" rgba="1 1 1 1" mesh="right_back_leg"/>
+        <geom type="mesh" rgba="1 1 1 0.35" mesh="right_back_leg"/>
       </body>
     </body>
-    <body name="left_hip" pos="-0.080372 -0.070493 -0.083518" quat="-1.65944e-06 -0.451768 0.892135 3.277e-06">
-      <inertial pos="0 0 0" mass="0.001" diaginertia="0.001 0.001 0.001"/>
+    <body name="left_hip" pos="-0.0803722 -0.0704932 -0.0835184" quat="0 -0.451749 0.892145 0">
+      <inertial pos="0 0.059196 0.002" mass="0.016868" diaginertia="0.001 0.001 0.001"/>
       <joint name="left_hip_link" pos="0 0 0" axis="0 0 1"/>
-      <geom type="mesh" rgba="1 1 1 1" mesh="left_hip"/>
+      <geom type="mesh" rgba="1 1 1 0.35" mesh="left_hip"/>
       <body name="left_back_leg" pos="0 0.020003 0.0065" quat="0.791339 0 0 0.611377">
-        <inertial pos="0 -0.0315619 0.002" mass="0.0130113" diaginertia="0.001 0.001 0.001"/>
+        <inertial pos="0 -0.031562 0.002" mass="0.013922" diaginertia="0.001 0.001 0.001"/>
         <joint name="left_back_leg_link" pos="0 0 0" axis="0 0 1"/>
-        <geom type="mesh" rgba="1 1 1 1" mesh="left_back_leg"/>
+        <geom type="mesh" rgba="1 1 1 0.35" mesh="left_back_leg"/>
       </body>
     </body>
   </worldbody>

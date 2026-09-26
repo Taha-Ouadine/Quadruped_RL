@@ -44,6 +44,18 @@ def main():
     
     # Strip the entire SolidWorks package URI, leaving just the filename (e.g., "base_link.STL")
     clean_content = re.sub(r'package://[^/]+/meshes/', '', content)
+
+    # base link floating in world
+    floating_injection = """
+      <link name="world"/>
+      <joint name="root_free_joint" type="floating">
+        <parent link="world"/>
+        <child link="base_link"/>
+      </joint>
+    </robot>
+    """
+    clean_content = clean_content.replace('</robot>', floating_injection)
+
     local_urdf_file.write_text(clean_content)
 
     # 5. Copy all STLs directly into the same folder as the URDF
@@ -53,6 +65,34 @@ def main():
         for stl in wsl_meshes_dir.glob("*.STL"):
             shutil.copy2(stl, local_dest / stl.name)
 
+    # --- NEW: Post-processing to inject MuJoCo specific tags ---
+    def enhance_mjcf(xml_file_path):
+        print("Injecting floor, lighting, and physics defaults...")
+        xml_content = xml_file_path.read_text()
+        
+        # Inject physics defaults after the <compiler> tag
+        default_block = """
+  <default>
+    <!-- joint damping stops harmonic oscillation; armature simulates motor rotor inertia -->
+    <joint damping="0.5" frictionloss="0.1" armature="0.01"/>
+    <!-- Disable physical collisions on all CAD meshes to stop them from snagging each other -->
+    <geom contype="0" conaffinity="0"/>
+  </default>"""
+        xml_content = re.sub(r'(<compiler[^>]*>)', r'\1\n' + default_block, xml_content, count=1)
+        
+        # Inject the floor and lighting right inside the <worldbody> tag.
+        # Explicitly setting contype="1" conaffinity="1" keeps the floor solid 
+        # despite the global default disabling collisions above.
+        env_block = """
+    <!-- Environment -->
+    <light pos="0 0 2" dir="0 0 -1" directional="true" castshadow="true"/>
+    <geom name="floor" type="plane" size="2 2 0.05" rgba="0.5 0.5 0.5 1" contype="1" conaffinity="1"/>
+"""
+        xml_content = re.sub(r'(<worldbody[^>]*>)', r'\1\n' + env_block, xml_content, count=1)
+        
+        xml_file_path.write_text(xml_content)
+    # -----------------------------------------------------------
+
     # 6. Convert to MuJoCo XML with automated physics sanitization
     xml_path = local_dest / f"{args.name}.xml"
     print(f"Converting to MuJoCo MJCF format...")
@@ -60,6 +100,7 @@ def main():
     def compile_model():
         model = mujoco.MjModel.from_xml_path(str(local_urdf_file))
         mujoco.mj_saveLastXML(str(xml_path), model)
+        enhance_mjcf(xml_path)  # Call the new post-processor here
         print(f"\nSuccess! Flat 3D model ready at: {xml_path}")
 
     try:
@@ -94,7 +135,7 @@ def main():
 
         if content != original_content:
             local_urdf_file.write_text(content)
-            print("Sanitization complete. Bumbed microscopic values to 0.001. Retrying compilation...")
+            print("Sanitization complete. Bumped microscopic values to 0.001. Retrying compilation...")
             try:
                 compile_model()
             except Exception as e2:

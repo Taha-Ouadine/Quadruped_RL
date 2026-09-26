@@ -1,0 +1,135 @@
+<mujoco model="Assem1.SLDASM">
+  <compiler angle="radian" />
+  <default>
+    <joint damping="0.5" frictionloss="0.1" armature="0.01" />
+    <geom contype="0" conaffinity="0" />
+  </default>
+  <asset>
+    <mesh name="base_link" content_type="model/stl" file="base_link.STL" />
+    <mesh name="Shoulder_1" content_type="model/stl" file="Shoulder_1.STL" />
+    <mesh name="Leg_1" content_type="model/stl" file="Leg_1.STL" />
+    <mesh name="Foot_1" content_type="model/stl" file="Foot_1.STL" />
+    <mesh name="Shoulder_2" content_type="model/stl" file="Shoulder_2.STL" />
+    <mesh name="Leg_2" content_type="model/stl" file="Leg_2.STL" />
+    <mesh name="Foot_2" content_type="model/stl" file="Foot_2.STL" />
+    <mesh name="Shoulder_3" content_type="model/stl" file="Shoulder_3.STL" />
+    <mesh name="Leg_3" content_type="model/stl" file="Leg_3.STL" />
+    <mesh name="Foot_3" content_type="model/stl" file="Foot_3.STL" />
+    <mesh name="Shoulder_4" content_type="model/stl" file="Shoulder_4.STL" />
+    <mesh name="Leg_4" content_type="model/stl" file="Leg_4.STL" />
+    <mesh name="Foot_4" content_type="model/stl" file="Foot_4.STL" />
+  </asset>
+  <worldbody>
+    <light pos="0 0 2" dir="0 0 -1" directional="true" castshadow="true" />
+    <geom name="floor" type="plane" size="2 2 0.05" rgba="0.5 0.5 0.5 1" contype="1" conaffinity="1" />
+    <body name="base_link">
+      <inertial pos="-0.00731085 -0.00851088 0.00271971" quat="0 0.707126 0 0.707088" mass="0.067908" diaginertia="6.35725e-05 4.4965e-05 2.27692e-05" />
+      <joint name="root_free_joint" type="free" />
+      <geom type="mesh" rgba="1 1 1 1" mesh="base_link" />
+      <body name="Shoulder_1" pos="-0.0426416 0.0269891 0" quat="0 0.520356 0.85395 0">
+        <inertial pos="0.0207619 2.69396e-05 -0.00806236" quat="0.757356 0.0172337 0.00998373 0.652698" mass="0.0457485" diaginertia="9.85618e-06 6.67917e-06 4.98132e-06" />
+        <joint name="Shoulder_1_joint" pos="0 0 0" axis="0 0 -1" />
+        <geom type="mesh" rgba="1 0.65098 0.631373 1" mesh="Shoulder_1" />
+        <body name="Leg_1" pos="0.0275 0 -0.0124638" quat="0.185005 -0.185005 -0.682476 -0.682476">
+          <inertial pos="-0.0264267 0 -0.00233437" quat="0.501819 0.498174 0.498174 0.501819" mass="0.00794016" diaginertia="3.64705e-06 2.02898e-06 1.81343e-06" />
+          <joint name="Leg_1_joint" pos="0 0 0" axis="0 0 1" />
+          <geom type="mesh" rgba="1 1 1 0.35" mesh="Leg_1" />
+          <body name="Foot_1" pos="-0.0621899 -0.00503669 0" quat="0.430317 0.430317 0.561095 0.561095">
+            <inertial pos="0.0257522 -0.00192894 0.00783247" quat="0.471021 0.534576 0.41186 0.568102" mass="0.0528645" diaginertia="2.79385e-05 2.71198e-05 2.25754e-06" />
+            <joint name="Foot_1_joint" pos="0 0 0" axis="0 1 0" />
+            <geom type="mesh" rgba="1 0.65098 0.631373 1" mesh="Foot_1" />
+          </body>
+        </body>
+      </body>
+      <body name="Shoulder_2" pos="-0.0426416 -0.0440109 0" quat="0.50314 0 0 -0.864205">
+        <inertial pos="0.0207591 4.56887e-05 0.00807047" quat="0.757436 -0.0176021 -0.00969187 0.652601" mass="0.045833" diaginertia="9.85936e-06 6.69236e-06 4.99161e-06" />
+        <joint name="Shoulder_2_joint" pos="0 0 0" axis="0 0 -1" />
+        <geom type="mesh" rgba="1 0.65098 0.631373 1" mesh="Shoulder_2" />
+        <body name="Leg_2" pos="0.0275 0 0.0124638" quat="-0.0594828 0.0594828 -0.7046 -0.7046">
+          <inertial pos="-0.0264267 0 -0.00233437" quat="0.501819 0.498174 0.498174 0.501819" mass="0.00794016" diaginertia="3.64705e-06 2.02898e-06 1.81343e-06" />
+          <joint name="Leg_2_joint" pos="0 0 0" axis="0 0 1" />
+          <geom type="mesh" rgba="1 1 1 0.35" mesh="Leg_2" />
+          <body name="Foot_2" pos="-0.055 0 0" quat="0.564933 -0.564933 -0.425265 0.425265">
+            <inertial pos="-0.021062 0.00202187 0.000523518" quat="0.467711 0.534338 0.415111 0.568693" mass="0.0553481" diaginertia="3.23707e-05 3.15227e-05 2.31214e-06" />
+            <joint name="Foot_2_joint" pos="0 0 0" axis="0 -1 0" />
+            <geom type="mesh" rgba="0.298039 0.298039 0.298039 1" mesh="Foot_2" />
+          </body>
+        </body>
+      </body>
+      <body name="Shoulder_3" pos="0.0283584 -0.0440109 0" quat="0 0.881454 -0.47227 0">
+        <inertial pos="0.0207619 2.69396e-05 -0.00806236" quat="0.757356 0.0172337 0.00998373 0.652698" mass="0.0457485" diaginertia="9.85618e-06 6.67917e-06 4.98132e-06" />
+        <joint name="Shoulder_3_joint" pos="0 0 0" axis="0 0 -1" />
+        <geom type="mesh" rgba="1 0.65098 0.631373 1" mesh="Shoulder_3" />
+        <body name="Leg_3" pos="0.0275 0 -0.0124638" quat="-0.215093 0.215093 0.673599 0.673599">
+          <inertial pos="-0.0264267 0 -0.00233437" quat="0.501819 0.498174 0.498174 0.501819" mass="0.00794016" diaginertia="3.64705e-06 2.02898e-06 1.81343e-06" />
+          <joint name="Leg_3_joint" pos="0 0 0" axis="0 0 1" />
+          <geom type="mesh" rgba="1 1 1 0.35" mesh="Leg_3" />
+          <body name="Foot_3" pos="-0.061552 0.00584246 0" quat="0.396735 -0.396735 0.585322 -0.585322">
+            <inertial pos="-0.0197522 0.00192894 0.00783247" quat="0.534576 0.471021 0.568102 0.41186" mass="0.0528645" diaginertia="2.79385e-05 2.71198e-05 2.25754e-06" />
+            <joint name="Foot_3_joint" pos="0 0 0" axis="0 -1 0" />
+            <geom type="mesh" rgba="0.298039 0.298039 0.298039 1" mesh="Foot_3" />
+          </body>
+        </body>
+      </body>
+      <body name="Shoulder_4" pos="0.0283584 0.0269891 0" quat="0.931018 0 0 0.364973">
+        <inertial pos="0.0207591 4.56887e-05 0.00807047" quat="0.757436 -0.0176021 -0.00969187 0.652601" mass="0.045833" diaginertia="9.85936e-06 6.69236e-06 4.99161e-06" />
+        <joint name="Shoulder_4_joint" pos="0 0 0" axis="0 0 -1" />
+        <geom type="mesh" rgba="1 0.65098 0.631373 1" mesh="Shoulder_4" />
+        <body name="Leg_4" pos="0.0275 0 0.0124638" quat="0.237839 -0.237839 0.665907 0.665907">
+          <inertial pos="-0.0264267 0 -0.00233437" quat="0.501819 0.498174 0.498174 0.501819" mass="0.00794016" diaginertia="3.64705e-06 2.02898e-06 1.81343e-06" />
+          <joint name="Leg_4_joint" pos="0 0 0" axis="0 0 1" />
+          <geom type="mesh" rgba="1 1 1 0.35" mesh="Leg_4" />
+          <body name="Foot_4" pos="-0.055 0 0" quat="0.501996 -0.501996 -0.497996 0.497996">
+            <inertial pos="-0.021062 0.00207617 0.000523518" quat="0.467711 0.534338 0.415111 0.568693" mass="0.0553481" diaginertia="3.23707e-05 3.15227e-05 2.31214e-06" />
+            <joint name="Foot_4_joint" pos="0 0 0" axis="0 -1 0" />
+            <geom type="mesh" rgba="0.298039 0.298039 0.298039 1" mesh="Foot_4" />
+          </body>
+        </body>
+      </body>
+      <site name="base_link_imu" pos="0 0 0" size="0.01" />
+    </body>
+  </worldbody>
+  <actuator>
+    <position name="Shoulder_1_joint_act" joint="Shoulder_1_joint" kp="20.0" />
+    <position name="Leg_1_joint_act" joint="Leg_1_joint" kp="20.0" />
+    <position name="Foot_1_joint_act" joint="Foot_1_joint" kp="20.0" />
+    <position name="Shoulder_2_joint_act" joint="Shoulder_2_joint" kp="20.0" />
+    <position name="Leg_2_joint_act" joint="Leg_2_joint" kp="20.0" />
+    <position name="Foot_2_joint_act" joint="Foot_2_joint" kp="20.0" />
+    <position name="Shoulder_3_joint_act" joint="Shoulder_3_joint" kp="20.0" />
+    <position name="Leg_3_joint_act" joint="Leg_3_joint" kp="20.0" />
+    <position name="Foot_3_joint_act" joint="Foot_3_joint" kp="20.0" />
+    <position name="Shoulder_4_joint_act" joint="Shoulder_4_joint" kp="20.0" />
+    <position name="Leg_4_joint_act" joint="Leg_4_joint" kp="20.0" />
+    <position name="Foot_4_joint_act" joint="Foot_4_joint" kp="20.0" />
+  </actuator>
+  <sensor>
+    <jointpos name="Shoulder_1_joint_pos" joint="Shoulder_1_joint" />
+    <jointvel name="Shoulder_1_joint_vel" joint="Shoulder_1_joint" />
+    <jointpos name="Leg_1_joint_pos" joint="Leg_1_joint" />
+    <jointvel name="Leg_1_joint_vel" joint="Leg_1_joint" />
+    <jointpos name="Foot_1_joint_pos" joint="Foot_1_joint" />
+    <jointvel name="Foot_1_joint_vel" joint="Foot_1_joint" />
+    <jointpos name="Shoulder_2_joint_pos" joint="Shoulder_2_joint" />
+    <jointvel name="Shoulder_2_joint_vel" joint="Shoulder_2_joint" />
+    <jointpos name="Leg_2_joint_pos" joint="Leg_2_joint" />
+    <jointvel name="Leg_2_joint_vel" joint="Leg_2_joint" />
+    <jointpos name="Foot_2_joint_pos" joint="Foot_2_joint" />
+    <jointvel name="Foot_2_joint_vel" joint="Foot_2_joint" />
+    <jointpos name="Shoulder_3_joint_pos" joint="Shoulder_3_joint" />
+    <jointvel name="Shoulder_3_joint_vel" joint="Shoulder_3_joint" />
+    <jointpos name="Leg_3_joint_pos" joint="Leg_3_joint" />
+    <jointvel name="Leg_3_joint_vel" joint="Leg_3_joint" />
+    <jointpos name="Foot_3_joint_pos" joint="Foot_3_joint" />
+    <jointvel name="Foot_3_joint_vel" joint="Foot_3_joint" />
+    <jointpos name="Shoulder_4_joint_pos" joint="Shoulder_4_joint" />
+    <jointvel name="Shoulder_4_joint_vel" joint="Shoulder_4_joint" />
+    <jointpos name="Leg_4_joint_pos" joint="Leg_4_joint" />
+    <jointvel name="Leg_4_joint_vel" joint="Leg_4_joint" />
+    <jointpos name="Foot_4_joint_pos" joint="Foot_4_joint" />
+    <jointvel name="Foot_4_joint_vel" joint="Foot_4_joint" />
+    <framequat name="base_link_orientation" objtype="site" objname="base_link_imu" />
+    <gyro name="base_link_gyro" site="base_link_imu" />
+    <accelerometer name="base_link_accel" site="base_link_imu" />
+  </sensor>
+</mujoco>
