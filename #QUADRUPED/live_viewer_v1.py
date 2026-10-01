@@ -1,4 +1,6 @@
 import time
+t0 = time.time()
+
 import os
 import json
 import shutil as _shutil
@@ -8,7 +10,7 @@ import glob
 TRAINING_IS_ON = False # PUT THIS TO TRUE IF YOU'RE VIEWING DURING TRAINING !!!
 PRINT_DELAYS = False
 
-if not TRAINING_IS_ON:
+if TRAINING_IS_ON:
     os.environ["JAX_PLATFORMS"] = "cpu"
     import jax
     print("JAX backend:", jax.default_backend())
@@ -21,8 +23,11 @@ import mujoco
 from mujoco import mjx
 import mujoco.viewer
 
-env_name = "Go1JoystickFlatTerrain"
-RUN_DIR = "/home/tahao_mw5iph3/linuxrobotic/mujoco_playground/logs/Go1JoystickFlatTerrain-20260918-234036"
+env_name = "SpiderWalk"
+RUN_DIR = "/home/tahao_mw5iph3/linuxrobotic/mujoco_playground/logs/SpiderWalk-20260928-164614"
+#env_name = "Go1JoystickFlatTerrain"
+#RUN_DIR = "/home/tahao_mw5iph3/linuxrobotic/mujoco_playground/logs/Go1JoystickFlatTerrain-20260918-234036"
+
 CHECKPOINTS_DIR = os.path.join(RUN_DIR, "checkpoints")
 
 env_cfg = registry.get_default_config(env_name)
@@ -81,6 +86,7 @@ rng = jax.random.PRNGKey(0)
 state = jit_reset(rng)
 
 print("Launching Viewer")
+
 with mujoco.viewer.launch_passive(mj_model, mj_data) as viewer:
     print("Live viewer running. Close window to exit.")
 

@@ -1,0 +1,2 @@
+from mujoco_playground._src.locomotion.spider.joystick import SpiderWalk
+from mujoco_playground._src.locomotion.spider.joystick import default_config

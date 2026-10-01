@@ -6,6 +6,9 @@ always use uv with "--active" to target the active env
 "code filename.py" to make new python file
 uv sync --all-extras (compatibility issues)
 uv pip install
+cp -r "/home/tahao_mw5iph3/linuxrobotic/folder_path" "/mnt/e/tahao_mw5iph3/Desktop/"
+
+---- LOOK "#RL_AddBot.txt" ----
 
 nvidia-smi (GPU)
 top (CPU)

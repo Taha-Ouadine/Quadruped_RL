@@ -1,0 +1,3 @@
+<mujoco model="spider">
+  <include file="SpiderBot.xml" />
+</mujoco>
